@@ -1,0 +1,6 @@
+select * from clients;
+select * from clients where Mname <> '';
+select * from clients order by Fname;
+select * from orders group by Payment having payDescription <> 'BOLETO';
+select Idclient, concat(Fname, ' ', Lname) as Name_Client, Idorder, OrderStatus, payDescription
+from clients c inner join orders o on Idclient = IdorderClient group by payDescription having payDescription <> 'BOLETO';
